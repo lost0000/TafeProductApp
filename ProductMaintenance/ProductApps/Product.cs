@@ -14,6 +14,7 @@ namespace ProductApps
         private decimal delivery;
         private decimal wrapping;
         private decimal gst;
+        private decimal gstTemp;
 
         private decimal Price
         {
@@ -77,5 +78,13 @@ namespace ProductApps
         {
             TotalPayment = (Price * Quantity) + 25 + 5;
         }
+
+        public void calGSTCharge()
+        {
+            gstTemp = (Price * Quantity) + 25 + 5;
+            gst = 1.1m;
+            TotalPayment = gstTemp * gst;
+        }
+
     }
 }
